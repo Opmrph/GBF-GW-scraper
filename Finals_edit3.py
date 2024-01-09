@@ -104,7 +104,12 @@ def parse_score():
 
 # Substitute the placeholder with the JSON file for the Google Sheet.
 # example: gc = gspread.service_account(filename = r'D:\Users\Hyde\Scrape\client_secret.json')
-  gc = gspread.service_account(filename = r'C:\Code for GBF\Scrape\client_secret.json')
+  
+  #edit 09/01/2024: use ./ following by the file name is less pain in the ass to 
+  #manage the file path yourself, but it could be more uh.. kind of secure to do it the way that
+  #the old maintainer suggested. in case of this code will be publicly visible tho.
+  # also this 4 long line of comment can be remove later if you understand what i'm doing here :)
+  gc = gspread.service_account(filename = r'./client_secret.json')
 
   spreadsheet = gc.open("Zenosyne GW")
   try:
